@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Rahul Kumar | Full Stack Developer</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+    darkMode: 'class'
+    }
+</script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/effects.css">
+
+    <script>
+    (function () {
+        const saved = localStorage.getItem('theme');
+
+        if (
+            saved === 'dark' ||
+            (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        }
+    })();
+</script>
+</head>
+
+
+<body class="antialiased transition-colors duration-300">
+
+    <!-- Top Navigation Bar -->
+    <nav
+        class="w-full bg-white dark:bg-gray-800 shadow-md transition-colors duration-300 py-4 px-4 sm:px-6 lg:px-8 sticky top-0 z-40">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-gray-100">Rahul<span
+                    class="text-blue-600">.</span></a>
+            <div class="flex items-center space-x-4 sm:space-x-6">
+                <ul class="hidden sm:flex space-x-4 md:space-x-6">
+                    <li><a href="#about"
+                            class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200">About</a>
+                    </li>
+                    <li><a href="#skills"
+                            class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200">Skills</a>
+                    </li>
+                    <li><a href="#experience"
+                            class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200">Experience</a>
+                    </li>
+                    <li><a href="#education"
+                            class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200">Education</a>
+                    </li>
+
+                    <li><a href="#projects"
+                            class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200">Projects</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200">Contact</a>
+                    </li>
+                </ul>
+                <!-- Day/Night Toggle Button in Nav -->
+                <button id="theme-toggle"
+                    class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 shadow-sm hover:shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <svg class="w-6 h-6 text-gray-700 dark:text-gray-200" fill="currentColor" viewBox="0 0 24 24">
+                        <path id="sun-icon"
+                            d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.407 6.407a.75.75 0 011.061-1.061l1.59 1.59a.75.75 0 01-1.06 1.06l-1.59-1.59zM4.5 12a.75.75 0 01-.75-.75H1.5a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM7.407 17.593a.75.75 0 01-1.061 1.061l-1.59-1.59a.75.75 0 011.06-1.06l1.59 1.59zM12 18.75a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0v-2.25a.75.75 0 01.75-.75zM17.593 17.593a.75.75 0 01-1.061 1.061l-1.59-1.59a.75.75 0 011.06-1.06l1.59 1.59zM19.5 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5h-2.25a.75.75 0 01-.75-.75zM17.593 6.407a.75.75 0 01-1.061-1.061l1.59-1.59a.75.75 0 011.06 1.06l-1.59 1.59zM12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
+                        <path id="moon-icon" class="hidden" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M9.549 2.531A10.024 10.024 0 0012 21.75c4.717 0 8.642-3.376 9.479-7.954C21.905 10.155 17.882 6.046 12.83 5.342A9.957 9.957 0 009.549 2.531z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl w-full modern-card p-6 sm:p-8 space-y-10">
+
+            <!-- Header Section (About Me) -->
+            <header id="about"
+                class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center pb-12 border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
+
+                <!-- About Info -->
+                <div class="space-y-4">
+                    <!-- Greeting -->
+                    <p class="text-2xl sm:text-2xl font-extrabold tracking-tight mb-1">
+                        <span id="greeting-text" class="ml-2 text-blue-600 dark:text-blue-400
+                                    transition-all duration-500">
+                            Glad you’re here
+                        </span>
+                    </p>
+                    <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-gray-100 leading-tight">Rahul
+                        Kumar</h2>
+                    <p class="text-lg sm:text-xl font-semibold text-gray-700 dark:text-gray-200">
+                        Full Stack Developer
+                    </p>
+                    <div class="flex flex-wrap gap-4 items-center text-gray-600 dark:text-gray-300 text-sm">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            therahulray@gmail.com
+                        </span>
+
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Delhi, India
+                        </span>
+
+                    </div>
+
+                    <p class="text-gray-700 dark:text-gray-200 leading-8 pt-2 max-w-2xl justify-text">
+                        Goal-oriented software engineer building scalable web applications using
+                        <strong>React</strong>, <strong>Next.js</strong>, <strong>Laravel</strong>, and
+                        modern backend technologies. Passionate about clean architecture,
+                        smooth user experiences, and elegant UI design.
+                    </p>
+
+
+                   <!-- <p class="text-gray-700 dark:text-gray-200 leading-relaxed pt-2 text-justify">
+                        Goal-oriented software engineer building scalable web applications using
+                        <strong>React</strong>, <strong>Next.js</strong>, <strong>Laravel</strong>, and
+                        modern backend technologies. Passionate about clean architecture,
+                        smooth user experiences, and elegant UI design.
+                    </p> -->
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3 pt-4">
+                        <a href="#"
+                            class="px-6 py-3
+                            bg-gray-800 text-white
+                            dark:bg-gradient-to-r
+                            dark:from-slate-800
+                            dark:to-slate-700
+                            dark:text-white
+                            rounded-xl text-md font-medium
+                            hover:bg-gray-700
+                            dark:hover:from-slate-700
+                            dark:hover:to-slate-600
+                            border border-transparent
+                            dark:border-slate-600
+                            shadow-lg
+                            dark:shadow-blue-500/10
+                            flex items-center gap-2
+                            transform hover:-translate-y-1 hover:scale-105
+                            transition-all duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9h-7V2zm-2 15H9v-2h2v2zm0-4H9v-2h2v2zm0-4H9V7h2v2zm6 7h-2v-2h2v2zM15 9V4.5L19.5 9H15z" />
+                            </svg>
+                            Resume
+                        </a>
+
+                        <!-- Social Icons -->
+                        <a href="https://www.instagram.com/itsrahulrai/" class="social-icon">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.25.148 4.779 1.624 4.938 4.87.058 1.267.07 1.647.07 4.85s-.012 3.584-.07 4.85c-.149 3.246-1.624 4.774-4.87 4.934-1.266.057-1.646.069-4.85.069s-3.583-.012-4.85-.07c-3.25-.15-4.773-1.624-4.934-4.87-.057-1.267-.069-1.647-.069-4.85s.012-3.583.07-4.85c.15-3.246 1.624-4.773 4.87-4.933 1.267-.057 1.647-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.435.202-6.737 2.493-6.94 6.938-.059 1.28-.073 1.688-.073 4.947s.014 3.668.072 4.947c.203 4.444 2.493 6.737 6.938 6.938 1.28.059 1.688.073 4.947.073s3.668-.014 4.947-.072c4.444-.202 6.737-2.493 6.938-6.938.059-1.28.073-1.688.073-4.947s-.014-3.668-.072-4.947c-.202-4.435-2.493-6.737-6.938-6.94-1.279-.058-1.687-.072-4.947-.072zM12 5.5c-3.584 0-6.5 2.916-6.5 6.5s2.916 6.5 6.5 6.5 6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5zm0 10.825c-2.38 0-4.325-1.945-4.325-4.325s1.945-4.325 4.325-4.325 4.325 1.945 4.325 4.325-1.945 4.325-4.325 4.325z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/itsrahulrai/" class="social-icon">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.541-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="https://github.com/itsrahulrai" target="_blank" class="social-icon">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.387 7.86 10.915.58.107.79-.25.79-.56v-2.027c-3.2.697-3.87-1.54-3.87-1.54-.53-1.35-1.29-1.71-1.29-1.71-1.06-.727.08-.712.08-.712 1.17.082 1.79 1.202 1.79 1.202 1.04 1.78 2.73 1.267 3.4.97.105-.754.41-1.27.75-1.56-2.55-.29-5.23-1.276-5.23-5.672 0-1.253.45-2.276 1.183-3.077-.118-.29-.513-1.45.113-3.027 0 0 .96-.31 3.14 1.176.91-.252 1.88-.378 2.84-.383.96.005 1.93.13 2.84.383 2.18-1.487 3.14-1.176 3.14-1.176.626 1.578.232 2.738.114 3.027.735.8 1.182 1.824 1.182 3.077 0 4.41-2.69 5.378-5.25 5.662.422.364.802 1.096.802 2.21v3.283c0 .313.21.673.8.56C20.21 21.387 23.5 17.08 23.5 12c0-6.27-5.23-11.5-11.5-11.5z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Skills Grid -->
+                <div class="grid grid-cols-2 gap-6">
+                    <div
+                        class="shine-border p-6 bg-zinc-50 dark:bg-gray-700 rounded-2xl shadow-xl flex flex-col items-center justify-center space-y-3 text-center transform hover:scale-105 transition-all duration-300">
+                        <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React.js"
+                            class="w-16 h-16">
+                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-100">ReactJs</p>
+                    </div>
+                    <div
+                        class="shine-border p-6 bg-zinc-50 dark:bg-gray-700 rounded-2xl shadow-xl flex flex-col items-center justify-center space-y-3 text-center transform hover:scale-105 transition-all duration-300">
+                        <img src="https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg" alt="Next.js"
+                            class="w-16 h-16 dark:filter dark:invert">
+                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-100">Next.js</p>
+                    </div>
+                    <div
+                        class="shine-border p-6 bg-zinc-50 dark:bg-gray-700 rounded-2xl shadow-xl flex flex-col items-center justify-center space-y-3 text-center transform hover:scale-105 transition-all duration-300">
+                        <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="MongoDB"
+                            class="w-16 h-16">
+                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-100">MongoDB</p>
+                    </div>
+                    <div
+                        class="shine-border p-6 bg-zinc-50 dark:bg-gray-700 rounded-2xl shadow-xl flex flex-col items-center justify-center space-y-3 text-center transform hover:scale-105 transition-all duration-300">
+                        <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS"
+                            class="w-16 h-16">
+                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-100">Tailwind CSS</p>
+                    </div>
+                </div>
+
+            </header>
+
+
+
+            <!-- My Skills Section (Categorized) -->
+            <section id="skills"
+                class="space-y-6 pt-6 border-gray-200 dark:border-gray-700 transition-colors duration-300">
+                <h2 class="text-3xl font-extrabold text-gray-900 dark:text-gray-100">Skills</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-base">
+                    Technologies and tools applied in real-world projects to build
+                    scalable architectures, robust backend systems, and user-focused
+                    web applications.
+                </p>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+
+                    <div class="skill-card">
+
+
+                        <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                            Frontend
+                        </h4>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="skill-tag bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
+                                <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="HTML5">
+                                HTML5
+                            </span>
+
+                            <span class="skill-tag bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">
+                                <img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg" alt="CSS3">
+                                CSS3
+                            </span>
+
+                            <span class="skill-tag bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300">
+                                <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
+                                    alt="Tailwind">
+                                Tailwind CSS
+                            </span>
+
+                            <span
+                                class="skill-tag bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">
+                                <img src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg"
+                                    alt="Bootstrap">
+                                Bootstrap
+                            </span>
+
+                            <span
+                                class="skill-tag bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300">
+                                <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg"
+                                    alt="JavaScript">
+                                JavaScript
+                            </span>
+
+                            <span class="skill-tag bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">
+                                <img src="https://cdn.iconscout.com/icon/free/png-256/react-4-1175110.png" alt="React">
+                                React.js
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <div class="skill-card">
+
+
+                        <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                            Backend
+                        </h4>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="skill-tag bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                                <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="Next.js">
+                                Next.js
+                            </span>
+
+                            <span
+                                class="skill-tag bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300">
+                                <img src="https://cdn.iconscout.com/icon/free/png-256/nodejs-2-226035.png"
+                                    alt="Node.js">
+                                Node.js
+                            </span>
+
+                            <span
+                                class="skill-tag bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
+                                <img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" alt="Express">
+                                Express
+                            </span>
+
+                            <span
+                                class="skill-tag bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/40 dark:text-fuchsia-300">
+                                <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel">
+                                Laravel
+                            </span>
+
+                            <span
+                                class="skill-tag bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">
+                                <img src="https://cdn.iconscout.com/icon/free/png-256/codeigniter-5-1175246.png"
+                                    alt="CodeIgniter">
+                                CodeIgniter
+                            </span>
+                            <span class="skill-tag bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300">
+                                <img src="https://www.vectorlogo.zone/logos/php/php-icon.svg" alt="PHP">
+                                PHP
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+
+
+                        <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                            Database
+                        </h4>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="skill-tag bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300">
+                                <img src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg" alt="MySQL">
+                                MySQL
+                            </span>
+
+                            <span class="skill-tag bg-lime-100 text-lime-700 dark:bg-lime-900/40 dark:text-lime-300">
+                                <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="MongoDB">
+                                MongoDB
+                            </span>
+
+                            <span class="skill-tag bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2103/2103658.png"
+                                    alt="Database Design">
+                                DB Design
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="skill-card">
+
+
+                        <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                            Tools
+                        </h4>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="skill-tag bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                                <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git">
+                                Git
+                            </span>
+
+                            <span class="skill-tag bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                                <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub"
+                                    class="dark:invert">
+                                GitHub
+                            </span>
+
+                            <span
+                                class="skill-tag bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">
+                                <img src="https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg" alt="VS Code">
+                                VS Code
+                            </span>
+                            <span
+                                class="skill-tag bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300">
+                                <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
+                                    alt="Postman">
+                                Postman
+                            </span>
+
+                            <span
+                                class="skill-tag bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300">
+                                <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS">
+                                AWS
+                            </span>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="space-y-6 pt-6 transition-colors duration-300">
+                <h2 class="text-3xl font-extrabold text-gray-900 dark:text-gray-100">
+                    Experience
+                </h2>
+
+                <div class="space-y-8">
+
+                    <!-- Full Stack Developer -->
+                    <div class="relative rounded-2xl
+                            bg-white/80 dark:bg-gray-900/80
+                            backdrop-blur border border-gray-200 dark:border-gray-700
+                        shadow-sm hover:shadow-2xl transition-all duration-300
+                        overflow-hidden">
+
+                        <!-- Top Ribbon -->
+                        <div class="flex items-center justify-between px-8 py-4
+                            border-b border-gray-200 dark:border-gray-700
+                            bg-gradient-to-r from-blue-50 to-transparent
+                            dark:from-blue-900/30">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                                    Full Stack Developer
+                                </h3>
+                                <p class="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                                    Hover Business Services
+                                </p>
+                            </div>
+
+                            <span class="px-4 py-1 text-xs font-semibold rounded
+                                bg-emerald-100 text-emerald-700
+                                dark:bg-emerald-900/40 dark:text-emerald-300">
+                                Oct 2024 – Present
+                            </span>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="relative px-8 py-6">
+                            <!-- Summary -->
+                            <p class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed mb-5">
+                                Full Stack Developer responsible for building
+                                <strong>scalable, business-critical web systems</strong>,
+                                resulting in a <strong>30–50% improvement</strong> in workflow efficiency
+                                across operations, learning, and assessment processes.
+                            </p>
+
+
+
+                            <!-- Key Systems -->
+                            <div class="space-y-4 text-sm text-gray-700 dark:text-gray-200 mb-6">
+
+                                <!-- CRM -->
+                                <div class="relative pl-8">
+                                    <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                                        bg-emerald-400 ring-4 ring-emerald-100
+                                        dark:bg-emerald-500 dark:ring-emerald-900/40"></span>
+
+                                    Led the development of an enterprise-level <strong>CRM platform</strong> handling
+                                    <strong>lead management</strong>, <strong>client onboarding</strong>,
+                                    <strong>employee profiles</strong>, <strong>attendance</strong>,
+                                    <strong>leave management</strong>, and automated business workflows.
+                                    </p>
+                                </div>
+
+                                <!-- LMS -->
+                                <div class="relative pl-8">
+                                    <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                     bg-indigo-400 ring-4 ring-indigo-100
+                     dark:bg-indigo-500 dark:ring-indigo-900/40"></span>
+
+                                    <p>
+                                        Engineered a scalable <strong>Learning Management System (LMS)</strong> with
+                                        course creation, structured lessons, student enrollment,
+                                        progress monitoring, and role-based access control.
+                                    </p>
+                                </div>
+
+                                <!-- Quiz -->
+                                <div class="relative pl-8">
+                                    <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                                    bg-purple-400 ring-4 ring-purple-100
+                                    dark:bg-purple-500 dark:ring-purple-900/40"></span>
+
+                                    <p>
+                                        Built a comprehensive <strong>Quiz & Assessment System</strong> featuring
+                                        dynamic question banks, timed exams, automated evaluation,
+                                        score calculation, and performance analytics.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <!-- Engineering Focus -->
+                            <div class="relative pl-8 mb-6">
+                                <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                 bg-slate-400 ring-4 ring-slate-100
+                 dark:bg-slate-500 dark:ring-slate-800"></span>
+
+                                <p class="text-sm text-gray-700 dark:text-gray-200">
+                                    Delivered <strong>end-to-end full-stack solutions</strong> with secure
+                                    authentication, RESTful API architecture, optimized databases,
+                                    and production-ready deployment practices.
+                                </p>
+                            </div>
+
+                            <!-- Skills -->
+                            <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <span
+                                    class="experience-skill-tag bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                                    Full Stack Engineering
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
+                                    MERN Stack
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">
+                                    React.js
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300">
+                                    Node.js / Express.js
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">
+                                    Next.js
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300">
+                                    Laravel / PHP
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300">
+                                    MySQL
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-lime-100 text-lime-700 dark:bg-lime-900/40 dark:text-lime-300">
+                                    MongoDB
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-cyan-100 text-cyan-700 dark:bg-cyan-900/40 dark:text-cyan-300">
+                                    CRM & LMS Systems
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                                    Git / GitHub
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Web Developer -->
+                    <div class="relative rounded-2xl
+                        bg-white/80 dark:bg-gray-900/80
+                        backdrop-blur border border-gray-200 dark:border-gray-700
+                        shadow-sm hover:shadow-2xl transition-all duration-300
+                        overflow-hidden">
+
+                        <!-- Top Ribbon -->
+                        <div class="flex items-center justify-between px-8 py-4
+                            border-b border-gray-200 dark:border-gray-700
+                            bg-gradient-to-r from-blue-50 to-transparent
+                            dark:from-blue-900/30">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                                    Web Developer
+                                </h3>
+                                <p class="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                                    Givni
+                                </p>
+                            </div>
+
+                            <span class="px-4 py-1 text-xs font-semibold rounded
+                                bg-emerald-100 text-emerald-700
+                                dark:bg-emerald-900/40 dark:text-emerald-300">
+                                Apr 2024 – Sep 2024
+                            </span>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="relative px-8 py-6">
+                            <!-- Summary -->
+                            <p class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed mb-5">
+                                Web Developer working primarily with <strong>Laravel</strong> to build
+                                <strong>dashboard-driven business applications</strong>, focusing on
+                                real-time tracking, attendance management, and CRM solutions.
+                            </p>
+
+                            <!-- Key Systems -->
+                            <div class="space-y-4 text-sm text-gray-700 dark:text-gray-200 mb-6">
+
+                                <!-- Employee Live Tracking -->
+                                <div class="relative pl-8">
+                                    <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                                    bg-emerald-400 ring-4 ring-emerald-100
+                                    dark:bg-emerald-500 dark:ring-emerald-900/40"></span>
+
+                                    <p>
+                                        Developed an <strong>Employee Live Location Tracking System</strong>
+                                        that captures and monitors employee location data upon dashboard login,
+                                        enabling real-time visibility and activity tracking.
+                                    </p>
+                                </div>
+
+                                <!-- Attendance Management -->
+                                <div class="relative pl-8">
+                                    <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                                    bg-indigo-400 ring-4 ring-indigo-100
+                                    dark:bg-indigo-500 dark:ring-indigo-900/40"></span>
+
+                                    <p>
+                                        Implemented a robust <strong>Attendance Management System</strong>
+                                        integrated with employee tracking, supporting attendance logs,
+                                        working hours calculation, and administrative reporting.
+                                    </p>
+                                </div>
+
+                                <!-- CRM Dashboard -->
+                                <div class="relative pl-8">
+                                    <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                     bg-purple-400 ring-4 ring-purple-100
+                     dark:bg-purple-500 dark:ring-purple-900/40"></span>
+
+                                    <p>
+                                        Designed and developed a <strong>CRM Dashboard for Property Management</strong>,
+                                        enabling management of properties, leads, enquiries, and client data
+                                        through a centralized admin interface.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <!-- Engineering Focus -->
+                            <div class="relative pl-8 mb-6">
+                                <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                 bg-slate-400 ring-4 ring-slate-100
+                 dark:bg-slate-500 dark:ring-slate-800"></span>
+
+                                <p class="text-sm text-gray-700 dark:text-gray-200">
+                                    Built <strong>secure, scalable, and maintainable Laravel applications</strong>
+                                    using role-based access control, optimized database queries,
+                                    and clean MVC architecture to support real-world business operations.
+                                </p>
+                            </div>
+
+                            <!-- Skills -->
+                            <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <span
+                                    class="experience-skill-tag bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300">
+                                    PHP
+                                </span>
+
+                                <span
+                                    class="experience-skill-tag bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/40 dark:text-fuchsia-300">
+                                    Laravel
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300">
+                                    MySQL
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                                    Git
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                                    GitHub
+                                </span>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- Web Developer -->
+                    <div class="relative rounded-2xl
+                            bg-white/80 dark:bg-gray-900/80
+                            backdrop-blur border border-gray-200 dark:border-gray-700
+                        shadow-sm hover:shadow-2xl transition-all duration-300
+                        overflow-hidden">
+
+                        <!-- Top Ribbon -->
+                        <div class="flex items-center justify-between px-8 py-4
+                            border-b border-gray-200 dark:border-gray-700
+                            bg-gradient-to-r from-blue-50 to-transparent
+                            dark:from-blue-900/30">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                                    Web Developer
+                                </h3>
+                                <p class="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                                    Sam Softech Consultancy Pvt. Ltd.
+                                </p>
+                            </div>
+
+                            <span class="px-4 py-1 text-xs font-semibold rounded
+                   bg-emerald-100 text-emerald-700
+                   dark:bg-emerald-900/40 dark:text-emerald-300">
+                                Jan 2023 – Mar 2024
+                            </span>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="relative px-8 py-6">
+                            <!-- Summary -->
+                            <!-- Summary -->
+                            <p class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed mb-5">
+                                Web Developer involved in developing multiple
+                                <strong>enquiry-based business websites</strong> and
+                                <strong>dashboard-driven web applications</strong>,
+                                focusing on usability, data management, and operational efficiency.
+                            </p>
+
+                            <!-- Key Systems -->
+                            <div class="space-y-4 text-sm text-gray-700 dark:text-gray-200 mb-6">
+
+                                <!-- Enquiry-Based Websites -->
+                                <div class="relative pl-8">
+                                    <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                                    bg-emerald-400 ring-4 ring-emerald-100
+                                    dark:bg-emerald-500 dark:ring-emerald-900/40"></span>
+
+                                    <p>
+                                        Developed multiple <strong>enquiry-based websites</strong> with dynamic
+                                        contact forms, lead capture, email notifications, and centralized
+                                        dashboards for managing customer enquiries.
+                                    </p>
+                                </div>
+
+                                <!-- Admin Dashboards -->
+                                <div class="relative pl-8">
+                                    <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                                bg-indigo-400 ring-4 ring-indigo-100
+                                dark:bg-indigo-500 dark:ring-indigo-900/40"></span>
+
+                                    <p>
+                                        Designed and implemented <strong>custom admin dashboards</strong> to manage
+                                        enquiries, users, content updates, and reports, improving visibility
+                                        and response time for business teams.
+                                    </p>
+                                </div>
+
+                                <!-- Banking Website -->
+                                <div class="relative pl-8">
+                                    <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                                    bg-purple-400 ring-4 ring-purple-100
+                                    dark:bg-purple-500 dark:ring-purple-900/40"></span>
+
+                                    <p>
+                                        Worked on a <strong>banking-related website</strong> with a secure
+                                        dashboard for managing customer data, content sections,
+                                        and administrative workflows.
+                                    </p>
+                                </div>
+
+                                <!-- Tech Stack -->
+                                <div class="relative pl-8">
+                                    <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                                    bg-sky-400 ring-4 ring-sky-100
+                                    dark:bg-sky-500 dark:ring-sky-900/40"></span>
+
+                                    <p>
+                                        Implemented backend logic using <strong>PHP</strong> and
+                                        <strong>CodeIgniter</strong>, with <strong>JavaScript</strong> and
+                                        <strong>AJAX</strong> for dynamic UI interactions and seamless data updates.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <!-- Engineering Focus -->
+                            <div class="relative pl-8 mb-6">
+                                <span class="absolute left-0 top-1 h-3 w-3 rounded-full
+                                    bg-slate-400 ring-4 ring-slate-100
+                                    dark:bg-slate-500 dark:ring-slate-800"></span>
+
+                                <p class="text-sm text-gray-700 dark:text-gray-200">
+                                    Delivered <strong>secure, maintainable, and scalable web solutions</strong>
+                                    by following clean coding practices, database optimization,
+                                    and real-world deployment standards.
+                                </p>
+                            </div>
+
+
+                            <!-- Skills -->
+                            <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <span
+                                    class="experience-skill-tag bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300">
+                                    PHP
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">
+                                    CodeIgniter
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/40 dark:text-fuchsia-300">
+                                    Laravel
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300">
+                                    MySQL
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                                    Git
+                                </span>
+                                <span
+                                    class="experience-skill-tag bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                                    GitHub
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Education Section -->
+            <section id="education" class="space-y-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+
+                <h2 class="text-3xl font-extrabold text-gray-900 dark:text-gray-100">
+                    Education
+                </h2>
+
+                <div class="space-y-6">
+
+                    <!-- MCA -->
+                    <section itemscope itemtype="" class="relative p-6 rounded-xl bg-gray-50 dark:bg-gray-800/60
+                    border border-gray-200 dark:border-gray-700
+                    hover:border-blue-400 transition">
+
+                        <span class="absolute left-0 top-6 h-10 w-1 rounded-full bg-blue-500"></span>
+
+                        <h3 itemprop="name" class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                            Master of Computer Applications (MCA)
+                        </h3>
+
+                        <!-- University + Logo -->
+                        <div class="flex items-center gap-3 mt-1">
+                            <img src="images/vgu.png" alt="Vivekananda Global University Logo" loading="lazy"
+                                class="h-10 w-auto object-contain bg-white rounded-md p-1" />
+
+                            <p itemprop="educationalLevel" class="text-blue-600 dark:text-blue-400 font-medium">
+                                Vivekananda Global University
+                            </p>
+                        </div>
+
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                            Currently Pursuing • Software Engineering & Full-Stack Development
+                        </p>
+
+                        <p itemprop="description" class="mt-3 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                            MCA student focused on <strong>Full-Stack Web Development</strong>, specializing
+                            in the <strong>MERN Stack</strong>, <strong>Laravel</strong>, and <strong>Next.js</strong>,
+                            with academic expertise in <strong>Artificial Intelligence</strong> and
+                            <strong>Cloud Technology & Information Security</strong>, building scalable and
+                            secure real-world applications.
+                        </p>
+
+                        <!-- SEO Hidden Keywords -->
+                        <span class="sr-only">
+                            MCA Student Portfolio, Full Stack Developer Portfolio,
+                            MERN Stack Developer India, Web Developer Portfolio,
+                            Software Engineer Portfolio, Laravel Developer, React Developer,
+                            Next.js Developer, MongoDB, MySQL, REST API Developer
+                        </span>
+                    </section>
+                    <!-- BCA -->
+                    <section itemscope itemtype="" class="relative p-6 rounded-xl bg-gray-50 dark:bg-gray-800/60
+                    border border-gray-200 dark:border-gray-700
+                    hover:border-blue-400 transition">
+
+                        <span class="absolute left-0 top-6 h-10 w-1 rounded-full bg-blue-500"></span>
+
+                        <h3 itemprop="name" class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                            Bachelor of Computer Applications (BCA)
+                        </h3>
+
+                        <!-- University + Logo -->
+                        <div class="flex items-center gap-3 mt-1">
+                            <img src="images/jnu.jpg" alt="Vivekananda Global University Logo" loading="lazy"
+                                class="h-10 w-auto object-contain bg-white rounded-md p-1" />
+
+                            <p itemprop="educationalLevel" class="text-blue-600 dark:text-blue-400 font-medium">
+                                Jaipur National University
+                            </p>
+                        </div>
+
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                            2015 – 2018
+                        </p>
+
+                        <p itemprop="description" class="mt-3 text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                            BCA student focused on <strong>programming fundamentals</strong>, learning
+                            <strong>programming languages</strong>, <strong>database management systems</strong>,
+                            and <strong>basic web technologies</strong>, building a strong foundation in
+                            software development.
+                        </p>
+                    </section>
+                </div>
+            </section>
+
+
+
+            <!-- Projects Section -->
+            <section id="projects"
+                class="space-y-6 pt-6 border-t border-gray-200 dark:border-gray-700 transition-colors duration-300">
+                <h2 class="text-3xl font-extrabold text-gray-900 dark:text-gray-100">Projects</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Project 1 -->
+                    <div
+                        class="modern-card p-5 flex flex-col rounded-2xl bg-white dark:bg-gray-800 shadow-sm hover:shadow-xl transition-all duration-300">
+                        <!-- Website Preview -->
+                        <div
+                            class="relative overflow-hidden rounded-xl mb-5 h-52 border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900">
+                            <!-- Fake browser top shadow -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-gradient-to-b from-black/10 to-transparent z-10">
+                            </div>
+
+                            <!-- Auto scrolling image -->
+                            <div class="preview-card">
+                                <div class="scroll-wrapper">
+                                    <img src="images/dikshantias.png" alt="Dikshant IAS Website Preview"
+                                        class="auto-scroll-image" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                            Dikshant IAS
+                        </h3>
+
+                        <p class="mt-2 text-gray-600 dark:text-gray-300 text-sm flex-grow">
+                            Responsive educational platform with interactive courses, quizzes, and personalized
+                            dashboards.
+                            Improved student engagement by 30% and page load speed by 25%.
+                        </p>
+
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mt-3 text-xs">
+                            <span
+                                class="px-3 py-1 rounded bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">React</span>
+                            <span
+                                class="px-3 py-1 rounded bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">Tailwind
+                                CSS</span>
+                            <span
+                                class="px-3 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">JavaScript</span>
+                            <span
+                                class="px-3 py-1 rounded bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300">API</span>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="flex gap-3 mt-4">
+                            <a href="https://www.dikshantias.com/"
+                                class="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">Live
+                                Demo</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Project 2 -->
+                    <div
+                        class="modern-card p-5 flex flex-col rounded-2xl bg-white dark:bg-gray-800 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                        <!-- Website Preview -->
+                        <div
+                            class="relative overflow-hidden rounded-xl mb-5 h-52 border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900">
+                            <!-- Fake browser top shadow -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-gradient-to-b from-black/10 to-transparent z-10">
+                            </div>
+
+                            <!-- Auto scrolling image -->
+                            <div class="preview-card">
+                                <div class="scroll-wrapper">
+                                    <img src="images/printhutt.png" alt="PrintHutt Website Preview"
+                                        class="auto-scroll-image" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Content -->
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                             PrintHutt
+                        </h3>
+
+                        <p class="mt-2 text-gray-600 dark:text-gray-300 text-sm flex-grow">
+                              Online printing and customization platform offering business cards,
+                              marketing materials, packaging products, and personalized print solutions.
+                        </p>
+
+                        <!-- Tech Stack -->
+                       <div class="flex flex-wrap gap-2 mt-3 text-xs">
+                            <span class="px-3 py-1 rounded bg-black text-white">Next.js</span>
+                            <span class="px-3 py-1 rounded bg-green-100 text-green-700">Node.js</span>
+                            <span class="px-3 py-1 rounded bg-yellow-100 text-yellow-700">Express.js</span>
+                            <span class="px-3 py-1 rounded bg-blue-100 text-blue-700">MongoDB</span>
+                            <span class="px-3 py-1 rounded bg-orange-100 text-orange-700">E-Commerce</span>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="flex gap-3 mt-4">
+                            <a href="https://printhutt.com/"
+                                class="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">Live
+                                Demo</a>
+                        </div>
+                    </div>
+
+                    
+                     <!-- Project 3 -->
+                    <div
+                        class="modern-card p-5 flex flex-col rounded-2xl bg-white dark:bg-gray-800 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                        <!-- Website Preview -->
+                        <div
+                            class="relative overflow-hidden rounded-xl mb-5 h-52 border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900">
+                            <!-- Fake browser top shadow -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-gradient-to-b from-black/10 to-transparent z-10">
+                            </div>
+
+                            <!-- Auto scrolling image -->
+                            <div class="preview-card">
+                                <div class="scroll-wrapper">
+                                    <img src="images/efos.png" alt="EFOS LMS Website Preview"
+                                        class="auto-scroll-image" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Content -->
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                            EFOS LMS & Job Portal
+                        </h3>
+
+                        <p class="mt-2 text-gray-600 dark:text-gray-300 text-sm flex-grow">
+                           Comprehensive Learning Management System and Job Portal featuring course management,
+                            student enrollment, assessments, certifications, job listings, employer dashboards,
+                            and candidate applications.
+                        </p>
+
+                        <!-- Tech Stack -->
+                       <div class="flex flex-wrap gap-2 mt-3 text-xs">
+                        <span class="px-3 py-1 rounded bg-blue-100 text-blue-700">Laravel</span>
+                        <span class="px-3 py-1 rounded bg-green-100 text-green-700">MySQL</span>
+                        <span class="px-3 py-1 rounded bg-purple-100 text-purple-700">Bootstrap</span>
+                          <span class="px-3 py-1 rounded bg-sky-100 text-sky-700">Zoom API</span>
+                        <span class="px-3 py-1 rounded bg-orange-100 text-orange-700">Job Portal</span>
+                    </div>
+
+                        <!-- CTA -->
+                     <div class="flex gap-3 mt-4">
+                        <a href="https://efos.in/" target="_blank"
+                            class="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">
+                            Live Demo
+                        </a>
+                    </div>
+                    </div>
+
+
+                        <!-- Project 4 -->
+                    <div
+                        class="modern-card p-5 flex flex-col rounded-2xl bg-white dark:bg-gray-800 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                        <!-- Website Preview -->
+                        <div
+                            class="relative overflow-hidden rounded-xl mb-5 h-52 border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900">
+                            <!-- Fake browser top shadow -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-gradient-to-b from-black/10 to-transparent z-10">
+                            </div>
+
+                            <!-- Auto scrolling image -->
+                            <div class="preview-card">
+                                <div class="scroll-wrapper">
+                                    <img src="images/grandmasala.png" alt="Grandma Masala Website Preview"
+                                        class="auto-scroll-image" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Content -->
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                            Grandma Masala
+                        </h3>
+
+                        <p class="mt-2 text-gray-600 dark:text-gray-300 text-sm flex-grow">
+                                E-commerce platform for spices and food products with product catalog,
+                               cart management, secure checkout, order tracking, and customer management.
+                            
+                        </p>
+
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mt-3 text-xs">
+                            <span class="px-3 py-1 rounded bg-blue-100 text-blue-700">Laravel</span>
+                            <span class="px-3 py-1 rounded bg-green-100 text-green-700">MySQL</span>
+                            <span class="px-3 py-1 rounded bg-rose-100 text-rose-700">E-Commerce</span>
+                            <span class="px-3 py-1 rounded bg-yellow-100 text-yellow-700">Payment Gateway</span>
+                        </div>
+                        <!-- CTA -->
+                       <div class="flex gap-3 mt-4">
+                            <a href="https://grandmasala.in/" target="_blank"
+                                class="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+
+            <!-- Contact Me Section -->
+            
+            
+            
+         
+                <section id="contact" class="relative py-16
+                        bg-gradient-to-b
+                        from-white via-blue-50/30 to-gray-50
+                        dark:from-slate-950
+                        dark:via-slate-900
+                        dark:to-black">
+                    
+                    <!-- Background glow with decorative icons -->
+                    <div class="absolute top-0 left-0 w-96 h-96 bg-indigo-200 dark:bg-indigo-900/30 rounded-full blur-3xl opacity-20 contact-float"></div>
+                    <div class="absolute bottom-0 right-0 w-80 h-80 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl opacity-20 contact-float" style="animation-delay: 1s;"></div>
+
+                    <!-- Decorative floating icons -->
+                    <div class="absolute top-20 left-10 text-4xl icon-float text-indigo-300 dark:text-indigo-700 opacity-30">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="absolute top-32 right-20 text-3xl icon-float text-blue-300 dark:text-blue-700 opacity-30" style="animation-delay: 0.5s;">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="absolute bottom-20 left-1/4 text-3xl icon-float text-purple-300 dark:text-purple-700 opacity-30" style="animation-delay: 1s;">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="absolute bottom-32 right-1/4 text-4xl icon-float text-pink-300 dark:text-pink-700 opacity-30" style="animation-delay: 1.5s;">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+
+                    <div class="relative max-w-5xl mx-auto px-6">
+                        
+                        <!-- Enhanced Heading with Icons -->
+                        <div class="mb-12 text-center heading-main">
+                            <p class="text-sm tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-3 font-bold">
+                                <i class="fas fa-comments heading-text-icon"></i>Get In Touch<i class="fas fa-hand-holding-heart heading-text-icon"></i>
+                            </p>
+
+                            <h2 class="text-5xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                                <span class="heading-decoration">✨</span>
+                                Design the <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-600">Future Together</span>
+                                <span class="heading-decoration">🚀</span>
+                            </h2>
+
+                            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                                <i class="fas fa-lightbulb small-icon"></i>Your idea + my skills = something awesome. Let's talk!
+                            </p>
+                        </div>
+
+                        <!-- Enhanced Cards Grid -->
+                        <div class="grid md:grid-cols-3 gap-8 mb-10">
+
+                            <!-- Email Card -->
+                            <div class="contact-card email-card card-slide-in p-8 rounded-2xl shadow-lg hover:shadow-2xl">
+                                <div class="icon-wrapper email-icons">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+
+                                <div class="badge badge-email">
+                                    <i class="fas fa-at small-icon"></i>
+                                    Email Address
+                                </div>
+                                <p class="contact-subtitle">
+                                    <i class="fas fa-link small-icon"></i>
+                                    <a href="mailto:codersvox@gmail.com" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 font-semibold transition">
+                                        codersvox@gmail.com
+                                    </a>
+                                </p>
+                            </div>
+
+                            <!-- Phone Card -->
+                            <div class="contact-card phone-card card-slide-in p-8 rounded-2xl shadow-lg hover:shadow-2xl">
+                                <div class="icon-wrapper phone-icons">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+
+                                <div class="badge badge-phone">
+                                    <i class="fas fa-mobile-alt small-icon"></i>
+                                    Phone Number
+                                </div>
+                                <p class="contact-subtitle">
+                                    <i class="fas fa-phone small-icon"></i>
+                                    <a href="tel:+919304457865" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-semibold transition">
+                                        +91 9304457865
+                                    </a>
+                                </p>
+                            </div>
+
+                            <!-- Social Card -->
+                            <div class="contact-card social-card card-slide-in p-8 rounded-2xl shadow-lg hover:shadow-2xl">
+                                <div class="icon-wrapper social-icons">
+                                    <i class="fas fa-share-alt"></i>
+                                </div>
+
+                                <div class="badge badge-social">
+                                    <i class="fas fa-globe small-icon"></i>
+                                    Social Links
+                                </div>
+                            
+                                <div class="social-links">
+                                    <a href="#" class="social-btn linkedin-btn" title="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="social-btn twitter-btn" title="Twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-btn instagram-btn" title="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- CTA Section with Icons -->
+                        <div class="text-center">
+                            <a href="mailto:codersvox@gmail.com" class="btn-primary">
+                                <span>
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Me an Email
+                                    <i class="fas fa-arrow-right"></i>
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Bottom decorative text with icons -->
+                        <div class="text-center mt-8 text-sm text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-check-circle text-green-500"></i> Quick Response
+                            <span class="mx-3">•</span>
+                            <i class="fas fa-star text-yellow-500"></i> Quality Work
+                            <span class="mx-3">•</span>
+                            <i class="fas fa-rocket text-red-500"></i> Fast Delivery
+                        </div>
+
+                    </div>
+
+                </section>
+
+            <!-- Footer -->
+            <footer
+                class="pt-6 border-t border-gray-200 dark:border-gray-700 text-center text-gray-500 dark:text-gray-400 text-sm transition-colors duration-300">
+                <p>&copy; 2026 Rahul Rai. All rights reserved.</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/greeting.js"></script>
+</body>
+
+</html>

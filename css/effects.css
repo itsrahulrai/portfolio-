@@ -1,0 +1,17 @@
+.skill-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.25),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: .6s ease;
+}
+
+.skill-card:hover::after {
+  transform: translateX(100%);
+}
