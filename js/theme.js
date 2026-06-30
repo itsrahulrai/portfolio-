@@ -1,27 +1,15 @@
-const html = document.documentElement;
-const btn = document.getElementById("theme-toggle");
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("theme-toggle");
 
-function setTheme(theme) {
-    if (theme === "dark") {
-        html.classList.add("dark");
-    } else {
-        html.classList.remove("dark");
-    }
+    if (!btn) return;
 
-    localStorage.setItem("theme", theme);
+    btn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
 
-    document.getElementById("sun-icon")?.classList.toggle("hidden", theme === "dark");
-    document.getElementById("moon-icon")?.classList.toggle("hidden", theme !== "dark");
-}
-
-const savedTheme =
-    localStorage.getItem("theme") ||
-    (window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light");
-
-setTheme(savedTheme);
-
-btn?.addEventListener("click", () => {
-    setTheme(html.classList.contains("dark") ? "light" : "dark");
+        if (document.documentElement.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    });
 });
