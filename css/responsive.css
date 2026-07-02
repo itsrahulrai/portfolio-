@@ -1,0 +1,108 @@
+/* =========================================================
+   RESPONSIVE FIXES ONLY
+   This file does not change any color, spacing, or visual
+   design choice from base.css / components.css / effects.css.
+   It only patches things that break on small screens:
+   - fixed-width project preview cards (400px) overflowing
+   - the nav links vanishing on mobile with no way to reopen them
+   - decorative blobs/icons causing horizontal scroll
+   - a few font-size / padding reductions so text doesn't
+     get cramped below ~380px
+   ========================================================= */
+
+/* Prevent any accidental horizontal scrollbar from decorative
+   absolutely-positioned blobs/icons in the contact section */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* ---------- Mobile nav dropdown ---------- */
+#mobile-menu {
+    animation: mobileMenuIn 0.25s ease-out;
+}
+
+@keyframes mobileMenuIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Project preview cards: kill the fixed 400px box ---------- */
+@media (max-width: 767px) {
+    .preview-card {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .auto-scroll-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* ---------- Header / hero tightening on small phones ---------- */
+@media (max-width: 480px) {
+    header#about h2 {
+        font-size: 2rem;      /* was text-4xl/5xl */
+        line-height: 1.2;
+    }
+
+    header#about .grid.grid-cols-2 {
+        gap: 0.75rem;
+    }
+
+    header#about .grid.grid-cols-2 > div {
+        padding: 1rem;
+    }
+
+    header#about .grid.grid-cols-2 img {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+}
+
+/* ---------- Experience cards: reduce padding so content breathes ---------- */
+@media (max-width: 480px) {
+    #experience .px-8 {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+/* ---------- Contact section: keep decorative icons from overflowing ---------- */
+@media (max-width: 640px) {
+    #contact .absolute.top-20.left-10,
+    #contact .absolute.top-32.right-20,
+    #contact .absolute.bottom-20.left-1\/4,
+    #contact .absolute.bottom-32.right-1\/4 {
+        display: none;
+    }
+
+    #contact .w-96,
+    #contact .w-80 {
+        width: 14rem;
+        height: 14rem;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ---------- Modern-card outer padding tightened a touch on very small phones ---------- */
+@media (max-width: 360px) {
+    .modern-card {
+        padding: 1rem !important;
+    }
+
+    header#about .grid.grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+}
