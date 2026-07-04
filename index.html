@@ -22,11 +22,12 @@
         rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Custom CSS -->
+  <!-- Custom CSS -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/effects.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/github-activity.css">
 
     <script>
     (function () {
@@ -170,14 +171,6 @@
                         modern backend technologies. Passionate about clean architecture,
                         smooth user experiences, and elegant UI design.
                     </p>
-
-
-                   <!-- <p class="text-gray-700 dark:text-gray-200 leading-relaxed pt-2 text-justify">
-                        Goal-oriented software engineer building scalable web applications using
-                        <strong>React</strong>, <strong>Next.js</strong>, <strong>Laravel</strong>, and
-                        modern backend technologies. Passionate about clean architecture,
-                        smooth user experiences, and elegant UI design.
-                    </p> -->
                     <!-- Action Buttons -->
                     <div class="flex flex-wrap gap-3 pt-4">
                         <a href="#"
@@ -1157,6 +1150,56 @@
                 </div>
             </section>
 
+
+        <!-- GitHub Activity Section -->
+            <section id="github-activity" class="space-y-6 pt-6 border-t border-gray-200 dark:border-gray-700 transition-colors duration-300">
+
+                <div class="flex items-start justify-between flex-wrap gap-4">
+                    <div>
+                        <span class="gh-eyebrow">
+                            <span class="gh-live-dot"></span> Live from GitHub
+                        </span>
+                        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-gray-100 mt-1">Engineering Journey</h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-base mt-1 max-w-xl">
+                            Explore my latest repositories, commits, and contributions—live from GitHub, reflecting my continuous growth as a software engineer.
+                        </p>
+                    </div>
+                    <div id="gh-profile" class="gh-profile-row">
+                        <div class="gh-avatar gh-skeleton"></div>
+                        <div class="gh-skeleton" style="width:160px;height:20px;"></div>
+                    </div>
+                </div>
+
+                <!-- Stat tiles -->
+                <div id="gh-stat-tiles" class="gh-tiles-grid">
+                    <div class="gh-tile"><div class="gh-skeleton" style="height:38px;"></div></div>
+                    <div class="gh-tile"><div class="gh-skeleton" style="height:38px;"></div></div>
+                    <div class="gh-tile"><div class="gh-skeleton" style="height:38px;"></div></div>
+                    <div class="gh-tile"><div class="gh-skeleton" style="height:38px;"></div></div>
+                </div>
+
+                <!-- Contribution Calendar -->
+                <div class="gh-card tilt-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-200 flex items-center gap-2">
+                            <i class="fas fa-chart-area text-green-500"></i> Contribution Calendar
+                        </h4>
+                        <span id="gh-year-range" class="text-xs font-medium text-gray-400 dark:text-gray-500"></span>
+                    </div>
+                    <div id="gh-heatmap-wrap">
+                        <div class="gh-skeleton" style="height:120px;width:100%;"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <!-- Languages card -->
+                   
+
+                    <!-- Featured repos card -->
+                  
+                </div>
+            </section> 
+
             <!-- Contact Me Section -->
             
             
@@ -1307,6 +1350,7 @@
     <script src="js/theme.js"></script>
     <script src="js/greeting.js"></script>
     <script src="js/mobile-menu.js"></script>
+    <script src="js/github-activity.js"></script>
 </body>
 
 </html>
